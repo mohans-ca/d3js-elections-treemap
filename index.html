@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="The graphical image tree map showing the trend of the each party performance in the Maharastra,Haryana,Jammu & Kashmir and Jharkhand Assembly elections held in the year 2014 and Delhi Assembly elections held in the year 2015.">
+    <meta name="author" content="Sushanth">
+    <meta http-equiv="refresh" content="600">
+    <meta name="keywords" content="data-visualisation, data-analytics, javascript, d3.js, data visualisation ,treemap,tree map,image treemap,imagemap">
+    <title>Assembly Elections - Bihar, India 2015 - CrowdANALYTIX</title>
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	
+    <link href="bootstrap.css" rel="stylesheet" /> 
+    <script type="text/javascript" src="bootstrap.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    	
+  </head>
+  <style>
+  .sub_header {
+    background-color: #31b0de;
+    padding: 8px 6px;
+	margin: 1px 0; 
+    color: white;
+    font-weight: 100;
+    text-align: center;
+	font-size: 25px;
+}
+  </style>
+  <body> 
+  <h1 class="sub_header">d3.js Tutorial for Treemap Chart using Voting data - Assembly Elections 2015, Bihar, India</h1>
+  <div class="marig_map" style="height:10px">
+  </div>
+         
+       <svg width="960" height="60" xmlns="http://www.w3.org/2000/svg" xlink:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 960 60" style="width:100%" data-height="0.54"  >
+  
+      <rect class="party-legend" data-party="RJD" data-highlight="[data-party=RJD]" data-toggle="highlight" x="0.0" width="58.75" height="20" fill="#21610B"></rect>
+      <text x="29.375" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">RJD</text>
+
+      <rect class="party-legend" data-party="JD" data-highlight="[data-party=JD]" data-toggle="highlight" x="58.75" width="58.75" height="20" fill="#594671"></rect>
+      <text x="88.125" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">JD</text>	
+	  
+      <rect class="party-legend" data-party="INC" data-highlight="[data-party=INC]" data-toggle="highlight" x="117.5" width="58.75" height="20" fill="#019733"></rect>
+      <text x="146.875" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">INC</text>
+    
+      <rect class="party-legend" data-party="BJP" data-highlight="[data-party=BJP]" data-toggle="highlight" x="176.25" width="58.75" height="20" fill="#FB7B0D"></rect>
+      <text x="205.625" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">BJP</text>
+    
+      <rect class="party-legend" data-party="CPM" data-highlight="[data-party=CPM]" data-toggle="highlight" x="235" width="58.75" height="20" fill="#DE0000"></rect>
+      <text x="264.375" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">CPM</text>
+    
+      <rect class="party-legend" data-party="JNP" data-highlight="[data-party=JNP]" data-toggle="highlight" x="293.75" width="58.75" height="20" fill="#000000"></rect>
+      <text x="323.125" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">JNP</text>
+    
+      <rect class="party-legend" data-party="NCP" data-highlight="[data-party=NCP]" data-toggle="highlight" x="352.5" width="58.75" height="20" fill="#8064a2"></rect>
+      <text x="381.875" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">NCP</text>
+    
+      <rect class="party-legend" data-party="IND" data-highlight="[data-party=IND]" data-toggle="highlight" x="411.25" width="58.75" height="20" fill="#95b3d7"></rect>
+      <text x="440.625" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">IND</text>
+    
+      <rect class="party-legend" data-party="CPI" data-highlight="[data-party=CPI]" data-toggle="highlight" x="470" width="58.75" height="20" fill="#DE0000"></rect>
+      <text x="499.375" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">CPI</text>
+    
+      <rect class="party-legend" data-party="INLD" data-highlight="[data-party=INLD]" data-toggle="highlight" x="528.75" width="58.75" height="20" fill="#800000"></rect>
+      <text x="558.125" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">INLD</text>
+    
+      <rect class="party-legend" data-party="JKNC" data-highlight="[data-party=JKNC]" data-toggle="highlight" x="587.5" width="58.75" height="20" fill="#B15928"></rect>
+      <text x="616.875" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">JKNC</text>
+    
+      <rect class="party-legend" data-party="JVM" data-highlight="[data-party=JVM]" data-toggle="highlight" x="646.25" width="58.75" height="20" fill="#4bacc6"></rect>
+      <text x="675.625" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">JVM</text>
+    
+      <rect class="party-legend" data-party="AAP" data-highlight="[data-party=AAP]" data-toggle="highlight" x="705" width="58.75" height="20" fill="#0C6965"></rect>
+      <text x="734.375" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">AAP</text>
+    
+      <rect class="party-legend" data-party="SHS" data-highlight="[data-party=SHS]" data-toggle="highlight" x="763.75" width="58.75" height="20" fill="#F05A00"></rect>
+      <text x="793.125" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">SHS</text>
+    
+      <rect class="party-legend" data-party="JMM" data-highlight="[data-party=JMM]" data-toggle="highlight" x="822.5" width="58.75" height="20" fill="#77968E"></rect>
+      <text x="851.875" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">JMM</text>
+    
+      <rect class="party-legend" data-party="PDP" data-highlight="[data-party=PDP]" data-toggle="highlight" x="881.25" width="58.75" height="20" fill="#9DBC2A"></rect>
+      <text x="910.625" y="10.0" text-anchor="middle" dy=".35em" fill="#fff">PDP</text>
+  
+    </svg>
+	<div class="container">
+       <div class="par_treemap">
+		</div>
+	</div>
+   <script>
+   var sub_width = parseInt(d3.select('.par_treemap').style('width'), 10);
+        
+	var width = sub_width,
+		height = 500;
+
+    var svg = d3.select(".par_treemap").append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("xmlns", 'http://www.w3.org/2000/svg')
+        .attr("xlink", 'http://www.w3.org/1999/xlink')
+        .attr("version", '1.1')
+        .style("width", "100%")
+        .attr("data-height","0.54")
+        .attr("viewBox","0 0 "+sub_width+" 540");
+        
+    var treemap = d3.layout.treemap()
+        .padding(0.5)
+        .size([width, height])
+        .sticky(true)
+        .value(function(d) {return d.votes;})
+        .children(function(d) {return d.values;});
+    
+    
+    d3.csv("data.csv", function(data) {
+        data_root = {"key":"treemap"};
+         data.forEach(function(o) {
+          o.votes = parseInt(o.votes);
+          });
+
+        var nest = d3.nest()
+        .key(function(d) { return  d.party; })
+        .entries(data);
+       
+    data_root["values"] = nest
+
+  var cell = svg.data([data_root]).selectAll("g")
+      .data(treemap.nodes)
+    .enter().append("rect")
+      .attr("x", function(d) { return d.x; })
+      .attr("y", function(d) { return d.y; })
+      .attr("width", function(d) { return d.dx; })
+      .attr("height", function(d) { return d.dy; })
+      .attr("data-title",function(d) { return '<p>Constituency : '+d.constituency+'</p> <br/> <p>Candidate : '+d.name+'</p> <br/> <p>party : '+d.party+'</p> <br/><p> votes : '+d.votes+'</p>' ;})
+      .style("fill", function(d) { return (d.color); })
+      .style("stroke", '#fff')
+      .style("stroke-width", 0.5);        
+
+      $("rect").tooltip({container: '.par_treemap', html: true, placement:'top'});
+
+        
+        });
+
+      
+   </script>
+</body>
+</html>
